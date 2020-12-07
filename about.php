@@ -25,7 +25,7 @@
 
 
         <!--=======Banner-Section Starts Here=======-->
-        <section class="hero-section bg_img" data-background="/investment/assets/images/about/hero-bg.png">
+        <section class="hero-section bg_img" data-background="<?=$subPath . '/assets/images/about/hero-bg.png'?>">
             <div class="container">
                 <div class="hero-content">
                     <h1 class="title">About US</h1>
@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 d-none d-lg-block rtl">
-                        <img src="/investment/assets/images/about/about.png" alt="about">
+                        <img src="<?=$subPath . '/assets/images/about/about.png'?>" alt="about">
                     </div>
                     <div class="col-lg-6">
                         <div class="section-header left-style">
@@ -72,21 +72,21 @@
 
 
         <!--=======CEO-Section Starts Here=======-->
-        <section class="ceo-section padding-bottom padding-top bg_img" data-background="/investment/assets/images/about/ceo-bg.jpg">
+        <section class="ceo-section padding-bottom padding-top bg_img" data-background="<?=$subPath . '/assets/images/about/ceo-bg.jpg'?>">
             <div class="container">
                 <div class="row justify-content-between">
                     <div class="col-lg-7 col-xl-6">
                         <div class="ceo-content">
                             <h3 class="title">Our vision is to genuinely promoting and propagating kingdom wealth on this terrestrial ball.</h3>
                             <div class="author">
-                                <h6 class="subtitle"><a href="#0">Joseph </a></h6>
+                                <h6 class="subtitle"><a href="#0">Adewale Love Joshua</a></h6>
                                 <span class="info">CEO of wiseinvestment</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-xl-3">
                         <div class="ceo-thumb">
-                            <img src="/investment/assets/images/about/certificate-ceo.png" alt="about">
+                            <img src="<?=$subPath . '/assets/images/about/certificate-ceo.png'?>" alt="about">
                         </div>
                         <a href="#0" class="custom-button">Open Certificate</a>
                     </div>
@@ -96,13 +96,13 @@
         <!--=======CEO-Section Ends Here=======-->
 
         <!--=======Check-Section Starts Here=======-->
-        <section class="call-section call-overlay bg_img" data-background="/investment/assets/images/call/call-bg.jpg">
+        <section class="call-section call-overlay bg_img" data-background="<?=$subPath . '/assets/images/call/call-bg.jpg'?>">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-7 col-xl-6">
                         <div class="call-item text-center text-sm-left">
                             <div class="call-icon">
-                                <img src="/investment/assets/images/call/icon01.png" alt="call">
+                                <img src="<?=$subPath . '/assets/images/call/icon01.png'?>" alt="call">
                             </div>
                             <div class="call-content">
                                 <h5 class="title">Ready To Start Your Earnings Through Crypto Currency</h5>

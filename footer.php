@@ -12,24 +12,24 @@
                             </form>
                         </div>
                         <div class="newslater-thumb">
-                            <img src="/investment/assets/images/footer/footer.png" alt="footer">
+                            <img src="<?=$subPath . '/assets/images/footer/footer.png'?>" alt="footer">
                             <div class="coin-1">
-                                <img src="/investment/assets/images/footer/Coin_01.png" alt="footer">
+                                <img src="<?=$subPath . '/assets/images/footer/Coin_01.png'?>" alt="footer">
                             </div>
                             <div class="coin-2">
-                                <img src="/investment/assets/images/footer/Coin_02.png" alt="footer">
+                                <img src="<?=$subPath . '/assets/images/footer/Coin_02.png'?>" alt="footer">
                             </div>
                             <div class="coin-3">
-                                <img src="/investment/assets/images/footer/Coin_03.png" alt="footer">
+                                <img src="<?=$subPath . '/assets/images/footer/Coin_03.png'?>" alt="footer">
                             </div>
                             <div class="coin-4">
-                                <img src="/investment/assets/images/footer/Coin_04.png" alt="footer">
+                                <img src="<?=$subPath . '/assets/images/footer/Coin_04.png'?>" alt="footer">
                             </div>
                             <div class="coin-5">
-                                <img src="/investment/assets/images/footer/Coin_05.png" alt="footer">
+                                <img src="<?= $subPath . '/assets/images/footer/Coin_05.png'?>" alt="footer">
                             </div>
                             <div class="coin-6">
-                                <img src="/investment/assets/images/footer/Coin_06.png" alt="footer">
+                                <img src="<?=$subPath . '/assets/images/footer/Coin_06.png'?>" alt="footer">
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                 <div class="footer-top">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="/investment/assets/images/logo/footer-logo1.jpeg" alt="logo">
+                            <img src="<?=$subPath . '/assets/images/logo/footer-logo1.jpeg'?>" alt="logo">
                         </a>
                     </div>
                     <ul class="links">

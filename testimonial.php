@@ -1,7 +1,7 @@
         <!--=======Check-Section Starts Here=======-->
         <section class="client-section padding-bottom padding-top">
             <div class="background-map">
-                <img src="/investment/assets/images/client/client-bg.png" alt="client">
+                <img src="<?=$subPath . '/assets/images/client/client-bg.png'?>" alt="client">
             </div>
             <div class="container">
                 <div class="row">
@@ -44,7 +44,7 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="/investment/assets/images/client/client01.png" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/client01.png'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="/investment/assets/images/client/client02.png" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/client02.png'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="/investment/assets/images/client/client03.png" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/client03.png'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>

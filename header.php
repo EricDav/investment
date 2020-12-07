@@ -39,7 +39,7 @@
                     <div class="header-area">
                         <div class="logo">
                             <a href="/">
-                                <img src="/investment/assets/images/logo/logo1.jpeg" alt="logo">
+                                <img src="<?=$subPath . '/assets/images/logo/logo1.jpeg'?>" alt="logo">
                             </a>
                         </div>
                         <ul class="menu">
@@ -59,7 +59,7 @@
                                 <a href="/contact">Contact</a>
                             </li>
                             <li class="pr-0">
-                                <a href="#0" data-toggle="modal" data-target="#exampleModal" class="custom-button">Join Us</a>
+                                <a href="#0" data-toggle="modal" data-target="#signupModal" class="custom-button">Join Us</a>
                             </li>
                         </ul>
                         <div class="header-bar d-lg-none">

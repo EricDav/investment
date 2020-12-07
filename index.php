@@ -1,15 +1,23 @@
 <?php 
-#$subPath = $_SERVER['HTTP_HOST'] == 'localhost:8888' ? '/Drycleaning' : '';
+$subPath = $_SERVER['HTTP_HOST'] == 'localhost:8888' ? '/investment' : '';
 $url = explode('?', $_SERVER['REQUEST_URI'])[0];
-
 if ($url == '/about') {
   include 'about.php';
   exit;
 } else if ($url == '/contact') {
   include 'contact.php';
   exit;
-} else if ('/') {
+} else if ($url == '/signup') {
+    include 'controller.php';
+    handleSignupRequest();
+} else if ($url == '/login') {
+    include 'controller.php';
+    handleSigninRequest();
+} else if ($url == '/') {
   // pass
+} else if ($url == '/faq') {
+    include 'faq.php';
+    exit;
 } else {
   header("Location: /");
 }
@@ -39,110 +47,58 @@ if ($url == '/about') {
         <!--========== Preloader ==========-->
 
         <?php include 'header.php';?>
-        <style>
-            .error-message {
-                font-size: 13px;
-                color: red;
-                display: none;
-            }
-        </style>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Open An Account</h5>
-                <button style="width: fit-content;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="name">First name</label>
-                    <input type="text" id="firstName" placeholder="name" name="name">
-                    <span class="error-message" id="firstname-error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="name">Last name</label>
-                    <input type="text" id="lastName" placeholder="name" name="name">
-                    <span class="error-message" id="lastname-error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="name">Email</label>
-                    <input type="email" id="email" placeholder="email" name="name">
-                    <span class="error-message" id="email-error"></span>
-                </div>
-                <div class="form-group">
-                    <label for="name">Password</label>
-                    <input type="password" id="name" placeholder="password" name="name">
-                    <span class="error-message" id="password-error"></span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button id="create-account" type="button" class="btn btn-primary">Save changes</button>
-                <div style="
-                    width: 100%;
-                    text-align: center;
-                            ">Already have an account?<a style="
-                    margin-left: 10px;
-                    font-size: 17px;
-                    cursor: pointer;
-                    font-style: oblique;
-                    color: #007bff;
-                ">Sign in</a></div>
-            </div>
-            </div>
-        </div>
-        </div>
+        <?php include 'signupmodal.php';?>
+        <?php include 'loginmodal.php';?>
 
         <!--=======Banner-Section Starts Here=======-->
         <section class="banner-section" id="home">
             <div class="banner-bg d-lg-none">
-                <img src="/investment/assets/images/banner/banner-bg2.jpg" alt="banner">
+                <img src= "<?=$subPath .'/assets/images/banner/banner-bg2.jpg'?>" alt="banner">
             </div>
-            <div class="banner-bg d-none d-lg-block bg_img" data-background="/investment/assets/images/banner/banner.jpg">
+            <div class="banner-bg d-none d-lg-block bg_img" data-background="<?=$subPath . '/assets/images/banner/banner.jpg'?>">
                 <div class="chart-1 wow fadeInLeft" data-wow-delay=".5s" data-wow-duration=".7s">
-                    <img src="/investment/assets/images/banner/chart1.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/chart1.png'?>" alt="banner">
                 </div>
                 <div class="chart-2 wow fadeInDown" data-wow-delay="1s" data-wow-duration=".7s">
-                    <img src="/investment/assets/images/banner/chart2.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/chart2.png'?>" alt="banner">
                 </div>
                 <div class="chart-3 wow fadeInRight" data-wow-delay="1.5s" data-wow-duration=".7s">
-                    <img src="/investment/assets/images/banner/chart3.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/chart3.png'?>" alt="banner">
                 </div>
                 <div class="chart-4 wow fadeInUp" data-wow-delay="2s" data-wow-duration=".7s">
-                    <img src="/investment/assets/images/banner/clock.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/clock.png'?>" alt="banner">
                 </div>
             </div>
             <div class="animation-area d-none d-lg-block">
                 <div class="plot">
-                    <img src="/investment/assets/images/banner/plot.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/plot.png'?>" alt="banner">
                 </div>
                 <div class="element-1 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/light.png" alt="banner">
+                    <img src="<?= $subPath . '/assets/images/banner/light.png'?>" alt="banner">
                 </div>
                 <div class="element-2 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin1.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin1.png'?>" alt="banner">
                 </div>
                 <div class="element-3 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin2.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin2.png'?>" alt="banner">
                 </div>
                 <div class="element-4 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin3.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin3.png'?>" alt="banner">
                 </div>
                 <div class="element-5 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin4.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin4.png'?>" alt="banner">
                 </div>
                 <div class="element-6 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin5.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin5.png'?>" alt="banner">
                 </div>
                 <div class="element-7 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin6.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin6.png'?>" alt="banner">
                 </div>
                 <div class="element-8 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/sheild.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/sheild.png'?>" alt="banner">
                 </div>
                 <div class="element-9 wow fadeIn" data-wow-delay="1s">
-                    <img src="/investment/assets/images/banner/coin7.png" alt="banner">
+                    <img src="<?=$subPath . '/assets/images/banner/coin7.png'?>" alt="banner">
                 </div>
             </div>
             <div class="container">
@@ -154,8 +110,7 @@ if ($url == '/about') {
                                 A Profitable platform for high-margin investment
                             </p>
                             <div class="button-group">
-                                <a href="#0" class="custom-button">Get Started Now!</a>
-                                <a href="https://www.youtube.com/watch?v=GT6-H4BRyqQ" class="popup video-button"><i class="flaticon-play"></i></a>
+                                <a data-toggle="modal" data-target="#loginModal" href="#0" class="custom-button">Get Started Now!</a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +127,7 @@ if ($url == '/about') {
                     <div class="col-sm-6 col-md-4">
                         <div class="counter-item">
                             <div class="counter-thumb">
-                                <img src="/investment/assets/images/counter/counter01.png" alt="counter">
+                                <img src="<?=$subPath . '/assets/images/counter/counter01.png'?>" alt="counter">
                             </div>
                             <div class="counter-content">
                                 <div class="counter-header">
@@ -189,7 +144,7 @@ if ($url == '/about') {
                     <div class="col-sm-6 col-md-4">
                         <div class="counter-item">
                             <div class="counter-thumb">
-                                <img src="/investment/assets/images/counter/counter03.png" alt="counter">
+                                <img src="<?=$subPath . '/assets/images/counter/counter03.png'?>" alt="counter">
                             </div>
                             <div class="counter-content">
                                 <div class="counter-header">
@@ -212,7 +167,7 @@ if ($url == '/about') {
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 d-none d-lg-block rtl">
-                        <img src="/investment/assets/images/about/about.png" alt="about">
+                        <img src="<?=$subPath . '/assets/images/about/about.png'?>" alt="about">
                     </div>
                     <div class="col-lg-6">
                         <div class="section-header left-style">
@@ -225,7 +180,7 @@ if ($url == '/about') {
                         <div class="about--content">
                             <div class="about-item">
                                 <div class="about-thumb">
-                                    <img src="/investment/assets/images/about/about01.png" alt="about">
+                                    <img src="<?=$subPath . '/assets/images/about/about01.png'?>" alt="about">
                                 </div>
                                 <div class="about-content">
                                     <h5 class="title">Secure & Reliable</h5>
@@ -236,7 +191,7 @@ if ($url == '/about') {
                             </div>
                             <div class="about-item">
                                 <div class="about-thumb">
-                                    <img src="/investment/assets/images/about/about02.png" alt="about">
+                                    <img src="<?=$subPath . '/assets/images/about/about02.png'?>" alt="about">
                                 </div>
                                 <div class="about-content">
                                     <h5 class="title">Fast Withdrawals</h5>
@@ -247,7 +202,7 @@ if ($url == '/about') {
                             </div>
                             <div class="about-item">
                                 <div class="about-thumb">
-                                    <img src="/investment/assets/images/about/about03.png" alt="about">
+                                    <img src="<?=$subPath . '/assets/images/about/about03.png'?>" alt="about">
                                 </div>
                                 <div class="about-content">
                                     <h5 class="title">Guaranteed</h5>
@@ -265,15 +220,15 @@ if ($url == '/about') {
 
 
         <!--=======Feature-Section Starts Here=======-->
-        <section class="feature-section padding-top padding-bottom bg_img" data-background="/investment/assets/images/feature/feature-bg.png" id="feature">
+        <section class="feature-section padding-top padding-bottom bg_img" data-background="<?=$subPath . '/assets/images/feature/feature-bg.png'?>" id="feature">
             <div class="ball-1" data-paroller-factor="-0.30" data-paroller-factor-lg="0.60" data-paroller-type="foreground" data-paroller-direction="horizontal">
-                <img src="/investment/assets/images/balls/ball1.png" alt="balls">
+                <img src="<?=$subPath . '/assets/images/balls/ball1.png'?>" alt="balls">
             </div>
             <div class="ball-2" data-paroller-factor="-0.30" data-paroller-factor-lg="0.60" data-paroller-type="foreground" data-paroller-direction="horizontal">
-                <img src="/investment/assets/images/balls/ball2.png" alt="balls">
+                <img src="<?=$subPath . '/assets/images/balls/ball2.png'?>" alt="balls">
             </div>
             <div class="ball-3" data-paroller-factor="0.30" data-paroller-factor-lg="-0.30" data-paroller-type="foreground" data-paroller-direction="horizontal">
-                <img src="/investment/assets/images/balls/ball3.png" alt="balls">
+                <img src="<?=$subPath . '/assets/images/balls/ball3.png'?>" alt="balls">
             </div>
             <div class="container">
                 <div class="row justify-content-center">
@@ -293,33 +248,33 @@ if ($url == '/about') {
                     <div class="col-md-6 col-sm-10 col-lg-4">
                         <div class="feature-item">
                             <div class="feature-thumb">
-                                <img src="/investment/assets/images/feature/feature01.png" alt="feature">
+                                <img src="<?=$subPath . '/assets/images/feature/feature01.png'?>" alt="feature">
                             </div>
                             <div class="feature-content">
                                 <h5 class="title">Profitable Investment</h5>
-                                <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p>
+                                <!-- <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-10 col-lg-4">
                         <div class="feature-item">
                             <div class="feature-thumb">
-                                <img src="/investment/assets/images/feature/feature02.png" alt="feature">
+                                <img src="<?=$subPath . '/assets/images/feature/feature02.png'?>" alt="feature">
                             </div>
                             <div class="feature-content">
-                                <h5 class="title">DDS Protection</h5>
-                                <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p>
+                                <h5 class="title">Secured Payment</h5>
+                                <!-- <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-10 col-lg-4">
                         <div class="feature-item">
                             <div class="feature-thumb">
-                                <img src="/investment/assets/images/feature/feature03.png" alt="feature">
+                                <img src="<?=$subPath . '/assets/images/feature/feature03.png'?>" alt="feature">
                             </div>
                             <div class="feature-content">
                                 <h5 class="title">24/7 Support Center</h5>
-                                <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p>
+                                <!-- <p>Donec tincidunt viverra ligula non interdum. Maecenas nulla </p> -->
                             </div>
                         </div>
                     </div>
@@ -349,13 +304,13 @@ if ($url == '/about') {
                             <div class="hover-tab-area">
                                 <div class="tab-area">
                                     <div class="tab-item active first">
-                                        <img src="/investment/assets/images/how/how01.png" alt="how">
+                                        <img src="<?=$subPath . '/assets/images/how/how01.png'?>" alt="how">
                                     </div>
                                     <div class="tab-item second">
-                                        <img src="/investment/assets/images/how/how02.png" alt="how">
+                                        <img src="<?=$subPath . '/assets/images/how/how02.png'?>" alt="how">
                                     </div>
                                     <div class="tab-item third">
-                                        <img src="/investment/assets/images/how/how03.png" alt="how">
+                                        <img src="<?=$subPath . '/assets/images/how/how03.png'?>" alt="how">
                                     </div>
                                 </div>
                             </div>
@@ -372,7 +327,7 @@ if ($url == '/about') {
                                         <div class="menu-content">
                                             <h5 class="title">Instant registration</h5>
                                             <p>
-                                                Click <a href="#0">Sign Up</a> to fill the blank, our 256 SSL will Protect your privacy.
+                                                Click <a href="#0" data-toggle="modal" data-target="#signupModal">Sign Up</a> to fill the blank, our 256 SSL will Protect your privacy.
                                             </p>
                                         </div>
                                     </li>
@@ -385,7 +340,7 @@ if ($url == '/about') {
                                         <div class="menu-content">
                                             <h5 class="title">MAKE AN INVEST</h5>
                                             <p>
-                                                <a href="#0">Login</a> your account to click invest to start to earn the profit.
+                                                <a href="#0" data-toggle="modal" data-target="#loginModal">Login</a> your account to click invest to start to earn the profit.
                                             </p>
                                         </div>
                                     </li>
@@ -413,7 +368,7 @@ if ($url == '/about') {
 
 
         <!--=======Check-Section Starts Here=======-->
-        <section class="call-section call-overlay bg_img" data-background="/investment/assets/images/call/call-bg.jpg">
+        <section class="call-section call-overlay bg_img" data-background="<?=$subPath . '/assets/images/call/call-bg.jpg'?>">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
@@ -425,7 +380,7 @@ if ($url == '/about') {
                     <div class="col-lg-5">
                         <div class="call-button">
                             <a href="Tel:0939303" class="call">
-                                <img src="/investment/assets/images/call/icon02.png" alt="call">
+                                <img src="<?=$subPath . '/assets/images/call/icon02.png'?>" alt="call">
                             </a>
                             <a href="#0" class="custom-button"> Contact Support</a>
                         </div>
@@ -439,10 +394,10 @@ if ($url == '/about') {
         <!--=======Offer-Section Stars Here=======-->
         <section class="offer-section padding-top padding-bottom pb-max-md-0" id="plan">
             <div class="ball-group-1" data-paroller-factor="-0.30" data-paroller-factor-lg="0.60" data-paroller-type="foreground" data-paroller-direction="horizontal">
-                <img src="/investment/assets/images/balls/ball-group1.png" alt="balls">
+                <img src="<?=$subPath . '/assets/images/balls/ball-group1.png'?>" alt="balls">
             </div>
             <div class="ball-group-2" data-paroller-factor="0.30" data-paroller-factor-lg="-0.30" data-paroller-type="foreground" data-paroller-direction="horizontal">
-                <img src="/investment/assets/images/balls/ball-group2.png" alt="balls">
+                <img src="<?=$subPath . '/assets/images/balls/ball-group2.png'?>" alt="balls">
             </div>
             <div class="container">
                 <div class="row justify-content-center">
@@ -466,7 +421,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item first">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer1.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer1.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Deposit</h5>
@@ -476,7 +431,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer2.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer2.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Terms</h5>
@@ -497,7 +452,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item first">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer1.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer1.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Deposit</h5>
@@ -507,7 +462,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer2.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer2.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Terms</h5>
@@ -528,7 +483,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item first">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer1.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer1.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Deposit</h5>
@@ -538,7 +493,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer2.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer2.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Terms</h5>
@@ -559,7 +514,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item first">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer1.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer1.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Deposit</h5>
@@ -569,7 +524,7 @@ if ($url == '/about') {
                             <span class="bal-shape"></span>
                             <div class="item">
                                 <div class="item-thumb">
-                                    <img src="/investment/assets/images/offer/offer2.png" alt="offer">
+                                    <img src="<?=$subPath . '/assets/images/offer/offer2.png'?>" alt="offer">
                                 </div>
                                 <div class="item-content">
                                     <h5 class="title">Terms</h5>
@@ -601,31 +556,31 @@ if ($url == '/about') {
                 </div>
             </div>
             <div class="container-fluid p-0">
-                <div class="profit-bg bg_img" data-background="/investment/assets/images/profit/profit-bg.png">
+                <div class="profit-bg bg_img" data-background="<?=$subPath . '/assets/images/profit/profit-bg.png'?>">
                     <div class="animation-group">
                         <div class="platform">
-                            <img src="/investment/assets/images/profit/platform.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/platform.png'?>" alt="profit">
                         </div>
                         <div class="light">
-                            <img src="/investment/assets/images/profit/light.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/light.png'?>" alt="profit">
                         </div>
                         <div class="coin-1 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin6.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin6.png'?>" alt="profit">
                         </div>
                         <div class="coin-2 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin2.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin2.png'?>" alt="profit">
                         </div>
                         <div class="coin-3 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin3.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin3.png'?>" alt="profit">
                         </div>
                         <div class="coin-4 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin4.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin4.png'?>" alt="profit">
                         </div>
                         <div class="coin-5 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin5.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin5.png'?>" alt="profit">
                         </div>
                         <div class="coin-6 wow fadeOutDown" data-wow-delay="1s">
-                            <img src="/investment/assets/images/profit/coin1.png" alt="profit">
+                            <img src="<?=$subPath . '/assets/images/profit/coin1.png'?>" alt="profit">
                         </div>
                     </div>
                 </div>
@@ -1172,7 +1127,7 @@ if ($url == '/about') {
                             <span class="cate">What You’ll Get In Our</span>
                             <h2 class="title fz-md-49">Forex Trade Program</h2>
                             <p>
-                                We give you the opportunity to become a professional Forex tradder within the space of 4 months. The first batch begins by January
+                                We give you the opportunity to become a professional Forex trader within the space of 4 months. The first batch begins by January
                             </p>
                         </div>
                         <div class="affiliate-wrapper">
@@ -1186,7 +1141,7 @@ if ($url == '/about') {
                     </div>
                     <div class="col-lg-5 d-lg-block d-none">
                         <div class="afiliate-thumb">
-                            <img src="/investment/assets/images/affiliate/affiliate.png" alt="affiliate">
+                            <img src="<?=$subPath . '/assets/images/affiliate/affiliate.png'?>" alt="affiliate">
                         </div>
                     </div>
                 </div>
@@ -1196,13 +1151,13 @@ if ($url == '/about') {
 
 
         <!--=======Check-Section Starts Here=======-->
-        <section class="call-section call-overlay bg_img" data-background="/investment/assets/images/call/call-bg.jpg">
+        <section class="call-section call-overlay bg_img" data-background="<?=$subPath . '/assets/images/call/call-bg.jpg'?>">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-7 col-xl-6">
                         <div class="call-item text-center text-sm-left">
                             <div class="call-icon">
-                                <img src="/investment/assets/images/call/icon01.png" alt="call">
+                                <img src="<?=$subPath.'/assets/images/call/icon01.png'?>" alt="call">
                             </div>
                             <div class="call-content">
                                 <h5 class="title">You already have an account with us login to view you progress</h5>
@@ -1226,6 +1181,19 @@ if ($url == '/about') {
     </div>
 
     <?php include 'script.php'; ?>
+    <script>
+        $('#signup-from-signin').click(function() {
+            console.log('I got here o!!!');
+            $('#loginModal').modal('toggle');
+            $('#signupModal').modal('toggle');
+        });
+        $('#signin-from-signup').click(function() {
+            console.log('I got here o!!!');
+            $('#loginModal').modal('toggle');
+            $('#signupModal').modal('toggle');
+        });
+    </script>
+    <script src="<?=$subPath . '/assets/js/modal.js'?>"></script>
 </body>
 
 </html>
