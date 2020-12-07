@@ -19,10 +19,10 @@
                 ),
         
                 'production' => array(
-                    'user' => 'nextgbec_user1',
+                    'user' => 'wiseinve_investment',
                     'password' => 'Iloveodunayo123',
                     'host' => 'localhost',
-                    'database' => 'nextgbec_bet_community',
+                    'database' => 'wiseinve_investment',
                     'port' => 3306
                 )
             );
