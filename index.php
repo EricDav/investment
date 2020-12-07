@@ -1181,19 +1181,6 @@ if ($url == '/about') {
     </div>
 
     <?php include 'script.php'; ?>
-    <script>
-        $('#signup-from-signin').click(function() {
-            console.log('I got here o!!!');
-            $('#loginModal').modal('toggle');
-            $('#signupModal').modal('toggle');
-        });
-        $('#signin-from-signup').click(function() {
-            console.log('I got here o!!!');
-            $('#loginModal').modal('toggle');
-            $('#signupModal').modal('toggle');
-        });
-    </script>
-    <script src="<?=$subPath . '/assets/js/modal.js'?>"></script>
 </body>
 
 </html>
