@@ -45,6 +45,7 @@
                 }
                 return $dbConnection->pdo->lastInsertId();
             } catch(Exception $e) {
+                var_dump($e->getMessage()); exit;
                 return false;
             }
         }

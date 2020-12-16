@@ -56,11 +56,10 @@
             );
             
             // Model::update($pdo, array('code_token' => $yourCode), array('id'=> $userId), 'users')
-
+            $userId = Model::create($pdo, $userData, 'users');
             $message = "<h3>Your verification code: " . $yourCode . "</div>";
             $mail = new SendMail($email, "Account Verification", $message, true);
             $mail->send();
-            $userId = Model::create($pdo, $userData, 'users');
             $userData['id'] = $userId;
             $_SESSION['userInfo'] = $userData;
             Helper::jsonResponse(array('success' => true, 'message' => 'User created successfully', 'userId' => $userId));
