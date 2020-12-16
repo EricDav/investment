@@ -78,7 +78,6 @@ $('#login-account').click(function() {
             $('#login-account').css('disabled', false);
             $('#login-account').text('Login');
            response = result;
-           console.log(response);
           if (!response.success) {
             $('#login-error-message').text(response.message)
           } else {
