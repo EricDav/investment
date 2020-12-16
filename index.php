@@ -15,7 +15,7 @@ if ($url == '/about') {
 } else if ($url == '/login') {
     include 'controller.php';
     handleSigninRequest();
-} else if ($url == 'verify-account') {
+} else if ($url == '/verify-account') {
     include 'controller.php';
     handleVerification();
 } else if ($url == '/') {

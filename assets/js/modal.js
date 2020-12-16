@@ -55,6 +55,8 @@ $('#create-account').click(function() {
           } else {
               $("#verificationModal").modal('toggle');
               $("#signupModal").modal('toggle');
+              localStorage.setItem('id', response.userId);
+
               id = response.userId;
               // window.location = '/';
           }
@@ -93,8 +95,9 @@ $('#verify-account').click(function() {
     if (!code.val().trim()) {
         $('#verification-error-message').text('Verification code is required');
     }  else {
-        $.ajax('/verify-account', { data: {id: id, code :code.val()},
+        $.ajax('/verify-account', { data: {id: localStorage.getItem('id'), code :code.val()},
         type: 'POST',  success: function(result) {
+            console.log(result);
                if (result.success) {
                 $('#successModal').modal('toggle');
                 $('#loginModal').modal('toggle'); 
