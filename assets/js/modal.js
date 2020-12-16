@@ -93,7 +93,7 @@ $('#verify-account').click(function() {
     if (!code.val().trim()) {
         $('#verification-error-message').text('Verification code is required');
     }  else {
-        $.ajax('/verify-account', { data: {id: id, code :code},
+        $.ajax('/verify-account', { data: {id: id, code :code.val()},
         type: 'POST',  success: function(result) {
                if (result.success) {
                 $('#successModal').modal('toggle');
