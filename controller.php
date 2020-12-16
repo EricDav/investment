@@ -51,7 +51,7 @@
                 'role' => 1,
                 'date_created' => gmdate("Y-m-d\ H:i:s"),
                 'code_token' => $yourCode,
-                'code_time' => gmdate("Y-m-d\ H:i:s"),
+                'code_token_time' => gmdate("Y-m-d\ H:i:s"),
                 'email_verified' => 0
             );
             
