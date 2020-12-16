@@ -13,14 +13,17 @@
     <script src="<?=$subPath . '/assets/js/main.js'?>"></script>
     <script>
         $('#signup-from-signin').click(function() {
-            console.log('I got here o!!!');
             $('#loginModal').modal('toggle');
             $('#signupModal').modal('toggle');
         });
         $('#signin-from-signup').click(function() {
-            console.log('I got here o!!!');
             $('#loginModal').modal('toggle');
             $('#signupModal').modal('toggle');
+        });
+
+        $('#signin-from-invest').click(function() {
+            $('#investModal').modal('toggle');
+            $('#loginModal').modal('toggle');
         });
     </script>
     <script src="<?=$subPath . '/assets/js/modal.js'?>"></script>

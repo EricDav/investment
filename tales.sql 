@@ -15,3 +15,36 @@ CREATE TABLE users (
     token_count TINYINT DEFAULT 0,
     PRIMARY KEY(id)
 ) ENGINE=INNODB;
+
+CREATE TABLE next_of_kin (
+    email VARCHAR(100),
+    first_name VARCHAR(225),
+    last_name VARCHAR(225),
+    phone_number VARCHAR(100),
+    user_id int NOT NULL,
+    PRIMARY KEY(id)
+)
+
+CREATE TABLE investments (
+    id int NOT NULL AUTO_INCREMENT,
+    type VARCHAR(50),
+    amount VARCHAR(30),
+    user_id int NOT NULL,
+    date_created DATETIME,
+    PRIMARY KEY(id)
+)
+
+CREATE TABLE transactions (
+    amount VARCHAR(15),
+    type boolean,
+    date_created DATETIME,
+    user_id int NOT NULL
+)
+
+CREATE TABLE bank_details (
+    user_id int NOT NULL,
+    account_number VARCHAR(10),
+    bank_name VARCHAR(50),
+    account_name VARCHAR(200),
+    bank_code
+)

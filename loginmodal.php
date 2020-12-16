@@ -5,7 +5,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Login Into Your Account</h5>
                 <button style="width: fit-content;" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
@@ -36,4 +36,4 @@
             </div>
             </div>
         </div>
-        </div>
+    </div>

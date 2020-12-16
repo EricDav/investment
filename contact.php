@@ -23,6 +23,7 @@
         <?php include 'header.php'; ?>
         <?php include 'signupmodal.php';?>
         <?php include 'loginmodal.php';?>
+        <?php include 'verificationmodal.php';?>
         <!--=======Header-Section Ends Here=======-->
 
 

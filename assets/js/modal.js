@@ -3,6 +3,8 @@ var lastName = $('#lastName');
 var email = $('#email');
 var password = $('#password');
 var isError = false;
+var id = null;
+
 $('#create-account').click(function() {
     isError = false;
     clear();
@@ -51,7 +53,10 @@ $('#create-account').click(function() {
 
                //$('#error-message').text(response.message);
           } else {
-              window.location = '/';
+              $("#verificationModal").modal('toggle');
+              $("#signupModal").modal('toggle');
+              id = response.userId;
+              // window.location = '/';
           }
        }});
     }
@@ -83,6 +88,19 @@ $('#login-account').click(function() {
     }
 });
 
+$('#verify-account').click(function() {
+    var code = $('#verification-input');
+    if (code.val().trim()) {
+        $('#verification-error-message').text('Verification code is required');
+    } else if (code.val().trim().length != 6) {
+        $('#verification-error-message').text('Invalid verification code. Verification code should be 6 digits');
+    } else {
+        $.ajax('/verify-account', { data: {id: id, code :code},
+        type: 'POST',  success: function(result) {
+               console.log(result);
+        }});
+    }
+});
 function clear() {
     $('#firstname-error').text('');
     $('#lastname-error').text('');
