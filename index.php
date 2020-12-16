@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'sendmail.php';
 $subPath = $_SERVER['HTTP_HOST'] == 'localhost:8888' ? '/investment' : '';
 $url = explode('?', $_SERVER['REQUEST_URI'])[0];

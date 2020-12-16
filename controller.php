@@ -91,8 +91,8 @@
         }
 
         if (is_array($user) && password_verify($password, $user['password'])) {
-         //   $user['password'] = '';
-         //   $_SESSION['userInfo'] = $user;
+           $user['password'] = '';
+           $_SESSION['userInfo'] = $user;
             Helper::jsonResponse(array('success' => true, 'message' => 'logged in successfully'));
         }
 
