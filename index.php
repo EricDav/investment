@@ -758,9 +758,8 @@ if ($url == '/about') {
     <?php include 'script.php'; ?>
 
     <?php 
-       echo  "<scropt>
-                $('#loginModal').modal('toggle');
-            </script>";
+        echo '<scropt language="javascript">';
+        echo '\$("#loginModal").modal("toggle");</script>';
     ?>
 </body>
 
