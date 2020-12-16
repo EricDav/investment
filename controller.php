@@ -94,7 +94,7 @@
            $user['password'] = '';
            $_SESSION['userInfo'] = $user;
            $tokenCode = Helper::generatePin();
-            if (Model::update($pdo, array('code_token' => 1), array('code_token'=> $tokenCode), 'users')) {
+            if (Model::update($pdo, array('code_token'=> $tokenCode), 'users')) {
                 Helper::jsonResponse(array('success' => true, 'message' => 'logged in successfully', 'id' => $user['id'], 'code' => $tokenCode));
             }
         }
