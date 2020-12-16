@@ -16,6 +16,7 @@
             $('#loginModal').modal('toggle');
             $('#signupModal').modal('toggle');
         });
+
         $('#signin-from-signup').click(function() {
             $('#loginModal').modal('toggle');
             $('#signupModal').modal('toggle');
@@ -25,5 +26,11 @@
             $('#investModal').modal('toggle');
             $('#loginModal').modal('toggle');
         });
+
+        $('#signup-from-success').click(function() {
+            $('#successModal').modal('toggle');
+            $('#loginModal').modal('toggle'); 
+        });
+
     </script>
-    <script src="<?=$subPath . '/assets/js/modal.js?v=3'?>"></script>
+    <script src="<?=$subPath . '/assets/js/modal.js?v=6'?>"></script>

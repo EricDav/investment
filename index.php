@@ -756,13 +756,6 @@ if ($url == '/about') {
     </div>
 
     <?php include 'script.php'; ?>
-
-    <?php
-        if ($_GET['showloginmodal']) {
-            echo '<script language="javascript">';
-            echo '$(\'#loginModal\').toggle()</script>';
-        }
-    ?>
 </body>
 
 </html>

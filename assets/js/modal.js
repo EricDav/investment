@@ -89,14 +89,17 @@ $('#login-account').click(function() {
 
 $('#verify-account').click(function() {
     var code = $('#verification-input');
-    if (code.val().trim()) {
+    if (!code.val().trim()) {
         $('#verification-error-message').text('Verification code is required');
     } else if (code.val().trim().length != 6) {
         $('#verification-error-message').text('Invalid verification code. Verification code should be 6 digits');
     } else {
         $.ajax('/verify-account', { data: {id: id, code :code},
         type: 'POST',  success: function(result) {
-               console.log(result);
+               if (result.success) {
+                $('#successModal').modal('toggle');
+                $('#loginModal').modal('toggle'); 
+               }
         }});
     }
 });
