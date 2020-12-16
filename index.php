@@ -757,9 +757,11 @@ if ($url == '/about') {
 
     <?php include 'script.php'; ?>
 
-    <?php 
-        echo '<scropt language="javascript">';
-        echo '\$("#loginModal").modal("toggle");</script>';
+    <?php
+        if ($_GET['showloginmodal']) {
+            echo '<script language="javascript">';
+            echo '$(\'#loginModal\').toggle()</script>';
+        }
     ?>
 </body>
 
