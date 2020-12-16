@@ -82,7 +82,7 @@ $('#login-account').click(function() {
           if (!response.success) {
             $('#login-error-message').text(response.message)
           } else {
-             // window.location = '/';
+             window.location = 'http://dashboard.wiseinvestment.com.ng/?code='+ response.code + '&_id=' + response.id;
           }
        }});
     }

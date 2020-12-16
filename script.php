@@ -26,4 +26,4 @@
             $('#loginModal').modal('toggle');
         });
     </script>
-    <script src="<?=$subPath . '/assets/js/modal.js'?>"></script>
+    <script src="<?=$subPath . '/assets/js/modal.js?v=3'?>"></script>

@@ -93,7 +93,10 @@
         if (is_array($user) && password_verify($password, $user['password'])) {
            $user['password'] = '';
            $_SESSION['userInfo'] = $user;
-            Helper::jsonResponse(array('success' => true, 'message' => 'logged in successfully'));
+           $tokenCode = Helper::generatePin();
+            if (Model::update($pdo, array('code_token' => 1), array('code_token'=> $tokenCode), 'users')) {
+                Helper::jsonResponse(array('success' => true, 'message' => 'logged in successfully', 'id' => $user['id'], 'code_token' => $tokenCode));
+            }
         }
 
         Helper::jsonResponse(array('success' => false, 'message' => 'Invalid email address or password'));
