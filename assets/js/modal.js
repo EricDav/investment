@@ -89,6 +89,7 @@ $('#login-account').click(function() {
 
 $('#verify-account').click(function() {
     var code = $('#verification-input');
+    console.log(code, id);
     if (!code.val().trim()) {
         $('#verification-error-message').text('Verification code is required');
     }  else {
