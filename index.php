@@ -757,11 +757,11 @@ if ($url == '/about') {
 
     <?php include 'script.php'; ?>
 
-    <?php if($_GET['showlogin_modal']): ?>
-        <scropt>
-            $('#loginModal').modal('toggle');
-        </script>
-    <?php endif; ?>
+    <?php 
+       echo  "<scropt>
+                $('#loginModal').modal('toggle');
+            </script>";
+    ?>
 </body>
 
 </html>
