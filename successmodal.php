@@ -12,7 +12,6 @@
                 <h3>Congratulations your account has been verified</h3><br>
             </div>
             <div class="modal-footer">
-            <button id="verify-account" type="button" class="btn btn-primary">Verify</button>
             <div style="
                     width: 100%;
                     text-align: center;
@@ -22,7 +21,7 @@
                     cursor: pointer;
                     font-style: oblique;
                     color: #007bff;
-                ">Sign In</a></div>
+                " id="login-from-success-modal">Sign In</a></div>
             </div>
             </div>
             </div>

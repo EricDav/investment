@@ -44,14 +44,14 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="<?=$subPath . '/assets/images/client/client01.png'?>" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/default_female.jpeg'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="client-item">
                                     <div class="client-content">
                                         <p>
-                                            Very easy to use, perfect for invest
+                                            Very easy to use, perfect for invest your money
                                         </p>
                                         <div class="rating">
                                             <span>
@@ -73,14 +73,14 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="<?=$subPath . '/assets/images/client/client02.png'?>" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/male.png'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="client-item">
                                     <div class="client-content">
                                         <p>
-                                            Awesome wiseinvestment most profitable site!
+                                            Awesome wiseinvestment is a profitable platform
                                         </p>
                                         <div class="rating">
                                             <span>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="client-thumb">
                                         <a href="#0">
-                                            <img src="<?=$subPath . '/assets/images/client/client03.png'?>" alt="client">
+                                            <img src="<?=$subPath . '/assets/images/client/default_female.jpeg'?>" alt="client">
                                         </a>
                                     </div>
                                 </div>

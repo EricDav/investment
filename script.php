@@ -33,4 +33,4 @@
         });
 
     </script>
-    <script src="<?=$subPath . '/assets/js/modal.js?v=7'?>"></script>
+    <script src="<?=$subPath . '/assets/js/modal.js?v=8'?>"></script>

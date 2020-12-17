@@ -44,19 +44,16 @@
                     </div>
                     <ul class="links">
                         <li>
-                            <a href="#0">About</a>
+                            <a href="/about">About</a>
                         </li>
                         <li>
-                            <a href="#0">Affiliates</a>
+                            <a href="/contact">Contact</a>
                         </li>
                         <li>
-                            <a href="#0">Plans</a>
+                            <a href="/faq">FAQ</a>
                         </li>
                         <li>
-                            <a href="#0">FAQ</a>
-                        </li>
-                        <li>
-                            <a href="#0">Privacy Policy</a>
+                            <a href="/forex-trade-program">Forex Trade Program</a>
                         </li>
                     </ul>
                 </div>

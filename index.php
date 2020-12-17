@@ -18,6 +18,9 @@ if ($url == '/about') {
 } else if ($url == '/verify-account') {
     include 'controller.php';
     handleVerification();
+} else if ($url == '/forex-trade-program') {
+    include 'forextradeprogram.php';
+    handleVerification();
 } else if ($url == '/') {
   // pass
 } else if ($url == '/faq') {
@@ -56,6 +59,7 @@ if ($url == '/about') {
         <?php include 'signupmodal.php';?>
         <?php include 'loginmodal.php';?>
         <?php include 'verificationmodal.php';?>
+        <?php include 'successmodal.php';?>
 
         <!--=======Banner-Section Starts Here=======-->
         <section class="banner-section" id="home">
@@ -712,7 +716,7 @@ if ($url == '/about') {
                         </div>
                         <div class="affiliate-bottom">
                             <h6 class="title">Become a forex trader</h6>
-                            <a href="#0" class="custom-button">
+                            <a href="/forex-trade-program" class="custom-button">
                                 learn more <i class="flaticon-right"></i>
                             </a>
                         </div>
@@ -756,6 +760,12 @@ if ($url == '/about') {
     </div>
 
     <?php include 'script.php'; ?>
+    <?php
+        if (isset($_GET['showloginmodal'])) {
+        echo '<script language="javascript">';
+        echo '$(\'#loginModal\').modal("toggle")</script>';
+        }
+    ?>
 </body>
 
 </html>

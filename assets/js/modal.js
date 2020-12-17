@@ -100,11 +100,20 @@ $('#verify-account').click(function() {
             console.log(result);
                if (result.success) {
                 $('#successModal').modal('toggle');
-                $('#loginModal').modal('toggle'); 
+                $('#verificationModal').modal('toggle'); 
+               } else {
+                    $('#verification-error-message').text(result.message);
                }
         }});
     }
 });
+
+$('#login-from-success-modal').click(function() {
+    $('#successModal').modal('toggle');
+    $('#loginModal').modal('toggle');
+});
+
+
 function clear() {
     $('#firstname-error').text('');
     $('#lastname-error').text('');
