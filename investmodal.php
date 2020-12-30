@@ -13,7 +13,7 @@
                 <div>Bank: GTBank</div>
                 <div>Acc.No: 0126666112</div>
                 <div>Acc.Name: Adewale Joshua</div><br>
-                <div>Send prove of payment to <b>info@wiseinvestment.com.ng</b> or whatsapp number <b>0810588910</b> after payment</div>
+                <div>Send prove of payment to <b>info@wiseinvestment.com.ng</b> or whatsapp number <b>08105889106</b> after payment</div>
             </div>
             <div class="modal-footer">
                 <div style="

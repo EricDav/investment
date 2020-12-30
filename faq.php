@@ -28,7 +28,7 @@
 
 
         <!--=======Banner-Section Starts Here=======-->
-        <section class="bg_img hero-section-2" data-background="<?=$subPath . '/assets/images/about/hero-bg3.jpg'?>">
+        <section class="hero-section-2" data-background="<?=$subPath . '/assets/images/about/hero-bg3.jpg'?>">
             <div class="container">
                 <div class="hero-content text-white">
                     <h1 class="title">faq</h1>

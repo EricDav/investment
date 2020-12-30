@@ -28,7 +28,7 @@
 
 
         <!--=======Banner-Section Starts Here=======-->
-        <section class="bg_img hero-section-2 left-bottom-lg-max" data-background="<?=$subPath . '/assets/images/about/hero-bg5.png'?>">
+        <section class="hero-section-2 left-bottom-lg-max" data-background="<?=$subPath . '/assets/images/about/hero-bg5.png'?>">
             <div class="container">
                 <div class="hero-content text-white">
                     <h1 class="title">Contact</h1>

@@ -57,3 +57,10 @@ CREATE TABLE forex (
     date_created DATETIME,
     PRIMARY KEY(id)
 )
+
+CREATE TABLE withdrawal_request (
+    id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    amount VARCHAR(20),
+    PRIMARY KEY(id)
+)
