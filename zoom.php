@@ -24,7 +24,7 @@ if (!$isSame) {
 
 foreach($fixtureObj as $fixtures) {
     foreach($fixtures as $fixture) {
-        if (property_exists($fixture, 'score')) {
+        if (!property_exists($fixture, 'score')) {
             foreach($newScores as $score) {
                 if ($score->home == $fixture->home and $score->away == $fixture->away) {
                     $fixture->score = $score->score;
